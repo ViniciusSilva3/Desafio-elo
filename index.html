@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 <body>
     <h1 style="text-align: center;"> Preencha o formulario</h1>
     <p id="welcome"></p>
-    <form name="formularioRegistro" method="POST" action="http://localhost/index.html">
+    <form name="formularioRegistro" id = "formularioRegistro" method="POST" action="http://localhost/index.html" onsubmit="return preencherPerfil(this);">
     <p>Nome:<br><input type="text" name='Nome' id='Nome'> </p>
     <p>Telefone:<br> <input type="text" name='Telefone' id='Telefone'> </p>
     <p> Como nos conheceu: </p>
@@ -35,7 +36,8 @@
         Instagram
         </p>
     </div>
-    <p><input type="button" value="Enviar" name="Submit" onclick="preencherPerfil();"></p>
+    <p><input type="submit" value="Submit" name="meuButao">
+        <input type="button" value="Reset" name="Reset" onclick="resetForm(this.form);"></p>
     </form>
     <script src="index.js">
     </script>

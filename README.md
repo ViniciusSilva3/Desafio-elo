@@ -1,0 +1,2 @@
+# Desafio-elo
+Para o funcionamento do código é necessário que os dois arquivos, index.html e index.js estejam na mesma pasta. Foi utilizado apenas javascript puro e HTML

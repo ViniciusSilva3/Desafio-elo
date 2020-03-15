@@ -32,8 +32,9 @@ function checaNumerosTelefone(inputtexto)
         return false;
     }
 }
-function preencherPerfil()
+function preencherPerfil(form)
 {
+    // Cria um objeto para retornar o arquivo JSON, inicialmente, todos os campos estao vazios
     var arquivoRetorno = {nomeret:"", telefoneret:"", conhecimentoret:"",redesret:[]};
     var nome = document.forms["formularioRegistro"]["Nome"];
     var telefone = document.forms["formularioRegistro"]["Telefone"];
@@ -116,19 +117,18 @@ function preencherPerfil()
         }
     }
     envio.send(arquivoEnviar);
-    //console.log(arquivoEnviar);
-    //console.log(telefone.value);
-    //console.log(conhecimento.value);
-    //console.log(redesSociais.value);
-    //console.log(checados1.checked);
-    return true;
+    form.meuButao.disabled = true;
+    form.meuButao.value = "Por favor espere...";
+    
+    // Com o servidor em localhost:8080 habilitado, mudar para return true
+    return false;
 }
-/*
-function envioFormulario()
+
+function resetForm(form)
 {
-    var verificador = preencherPerfil();
-    if( verificador == true)
-    {
-        
-    }
-}*/
+    form.meuButao.disabled = false;
+    form.meuButao.value = "Enviar";
+    document.getElementById("formularioRegistro").reset();
+    document.getElementById('Nome').style.borderColor = "grey";
+    document.getElementById('Telefone').style.borderColor = "grey";
+}
